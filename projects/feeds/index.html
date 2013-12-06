@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Feeds Generator</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<!-- 1140px Grid styles for IE -->
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
+
+	<!-- The 1140px Grid - http://cssgrid.net/ -->
+	<link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />
+	
+	<!-- Your styles -->
+	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+	
+	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
+	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    
+    function feedgenerator() {
+    var feeds = {
+    
+    // 120 000 = 2min, 600 000 = 10 min
+    
+    /*"head": ["http://feeds.urbandictionary.com/UrbanWordOfTheDay", 1,'heading'], */
+    
+    	// 	GAMING
+    	// news
+    	"gaming-a": ["http://www.eurogamer.net/?format=rss&type=news", 2,'game-news'],
+    	"gaming-b": ["http://feeds.gawker.com/kotaku/full", 1,'ent-headline'],  
+    	"gaming-c": ["http://www.joystiq.com/rss.xml", 2,'game-news'],
+		"gaming-d": ["http://andriasang.com/rss/", 1,'game-news'],   
+		"gaming-e": ["http://feeds.ign.com/ignfeeds/all/", 1,'game-news'],
+		"escapist": ["http://www.escapistmagazine.com/rss/news/0.xml", 1,'game-news'],
+		
+		
+				
+ 
+		// reviews
+		"gaming-g": ["http://www.eurogamer.net/?format=rss&type=review", 1,'game-reviews'],
+		"gaming-h": ["http://www.destructoid.com/elephant/index.phtml?t=reviews&mode=atom", 1,'game-reviews'],   
+		"gaming-k": ["http://feeds.feedburner.com/edge/reviews", 1,'game-reviews'],
+		"gaming-l": ["http://kotaku.com/review/index.xml", 1,'game-reviews'],
+		"gaming-m": ["http://www.gametrailers.com/rssgenerate.php?s1=&type[review]=on&orderby=newest&limit=5", 1,'game-reviews'],
+		"destructoid": ["http://www.destructoid.com/elephant/index.phtml?t=reviews&mode=atom", 1,'game-reviews'],
+		
+		
+		// TECH
+		// news
+    	"tech-a": ["http://www.techmeme.com/feed.xml", 1,'tech-headline'],
+		"tech-b": ["http://www.theregister.co.uk/headlines.atom", 2,'tech-news'],
+		"tech-d": ["http://feeds.arstechnica.com/arstechnica/index/", 2,'tech-news'],
+		"tech-g": ["http://feeds.feedburner.com/TechCrunch/", 1,'tech-news'],
+		"tnw": ["http://feeds2.feedburner.com/thenextwebtopstories", 1,'tech-news'],
+
+		
+		
+		
+		"tech-e": ["http://feeds.mashable.com/Mashable", 1,'tech-blogs'],
+		"tech-i": ["http://www.engadget.com/rss.xml", 2,'tech-blogs'],
+		"tech-c": ["http://www.theverge.com/rss/index.xml", 1,'tech-blogs'], 
+		"gizmodo": ["http://www.gizmodo.co.uk/feed/rss/", 2,'tech-blogs'], 
+		"bgr": ["http://www.bgr.com/feed/", 1,'tech-blogs'], 
+
+		
+		
+		// tech reviews
+		"tech-k": ["http://feeds2.feedburner.com/techradar/tech-reviews", 1,'tech-reviews'],
+		"tech-l": ["http://www.theverge.com/rss/label/review/index.xml", 2,'tech-reviews'],
+		"tech-m": ["http://feeds.feedburner.com/T3/reviews", 1,'tech-reviews'],
+		"tech-n": ["http://feeds.slashgear.com/slashgear", 1,'tech-reviews'],
+		
+		
+		
+		// ENTERTAINMENT
+		// news
+    	"ent-a": ["http://feeds.boingboing.net/boingboing/iBag", 2,'social-news'],
+    	"ent-b": ["http://www.reddit.com/r/all/.rss", 1,'social-news'], 
+    	"ent-d": ["http://www.buzzfeed.com/index.xml", 1,'social-news'],
+    	"ent-e": ["http://feeds.feedburner.com/uproxx/features", 1,'social-news'],
+	
+    	// culture
+    	"ent-f": ["http://feeds.feedburner.com/AllThatsInteresting", 1,'culture'],
+    	"ent-g": ["http://feeds2.feedburner.com/PinkTentacle", 1,'culture'],
+    	"ent-h": ["http://feeds.guardian.co.uk/theguardian/culture/rss", 1,'culture'],
+    	"neatorma": ["http://feeds2.feedburner.com/Neatorama", 1,'culture'],
+    	"geekosystem": ["http://www.geekosystem.com/feed/", 1,'culture'],
+    	
+    	
+    	"ent-i": ["http://www.denofgeek.com/index.rss", 2,'science'],
+    	"ent-j": ["http://feeds.gawker.com/io9/full", 2,'science'],
+
+    	
+    	//humor
+		"ent-m": ["http://feeds.feedburner.com/CrackedRSS", 1,'rand-headline'],
+		"ent-p": ["http://www.reddit.com/r/offbeat/.rss", 1,'humor'],
+		"ent-q": ["http://www.thesmokinggun.com/rss", 1,'humor'], 
+		"ent-r": ["http://feeds.feedburner.com/feedburner/ZdSV", 1,'humor'],
+		"ent-s": ["http://feeds.feedburner.com/failblog", 1,'humor'],
+		"ent-t": ["http://feeds.feedburner.com/killsometime/recent", 1,'humor'],
+		"kym": ["http://knowyourmeme.com/newsfeed.rss", 1,'humor'],
+		"tdw": ["http://feeds.feedburner.com/feedburner/oicv", 1,'humor'],
+		"fod": ["http://www.funnyordie.com/?format=rss", 1,'humor'],
+		
+		
+		// film
+		"ent-v": ["http://www.guardian.co.uk/film/rss", 1,'film'],
+		"ent-w": ["http://www.comingsoon.net/news/rss-movie-5.php", 2,'film'],
+		"ent-x": ["http://rogerebert.suntimes.com/apps/pbcs.dll/section?category=RSS&mime=xml", 1,'film'],
+		"ent-y": ["http://www.reddit.com/r/movies/.rss", 1,'film'],
+		"slashfilm": ["http://feeds2.feedburner.com/slashfilm", 1,'film'],
+		"chud": ["http://www.chud.com/feed/", 1,'film'],
+		
+		
+
+// READ
+		// local news
+		"news-a": ["http://news.google.co.uk/?output=rss", 1,'news-headline'],
+		"news-b": ["http://mf.feeds.reuters.com/reuters/UKdomesticNews", 2,'local-news'],
+		"independent-uk": ["http://rss.feedsportal.com/c/266/f/3496/index.rss", 1,'local-news'],
+		"news-c": ["http://www.dailymail.co.uk/home/index.rss", 1,'local-news'],
+		"news-d": ["http://www.huffingtonpost.com/feeds/verticals/uk/news.xml", 1,'local-news'],
+
+		// world news
+		"news-e": ["http://feeds.bbci.co.uk/news/world/rss.xml", 2,'world-news'],
+		"news-f": ["http://www.aljazeera.com/Services/Rss/?PostingId=2007731105943979989", 1,'world-news'],
+		"news-g": ["http://www.fark.com/fark.rss", 1,'world-news'],
+		"reuters-world": ["http://mf.feeds.reuters.com/reuters/UKWorldNews", 1,'world-news'],
+
+
+// science
+		"science-a": ["http://feeds.nationalgeographic.com/ng/News/News_Main", 1,'science'],
+		"science-b": ["http://www.sciencedaily.com/rss/top_news.xml", 1,'science'],
+		"science-c": ["http://feeds.newscientist.com/science-news", 1,'science'],
+		"science-d": ["http://www.mentalfloss.com/blogs/feed/rss", 1,'science'],
+		"science-f": ["http://www.reddit.com/r/science/.rss", 1,'science'],
+		"wired-science": ["http://feeds.wired.com/wired/index", 1,'science'],
+		
+		
+
+		
+			// interesting
+		"read-a": ["http://www.reddit.com/r/todayilearned/.rss", 2,'culture'],
+		"read-b": ["http://feeds.wired.com/wired/index", 1,'culture'],
+		"read-c": ["http://feeds.gawker.com/lifehacker/full", 1,'culture'],
+		"read-d": ["http://www.reddit.com/r/wikipedia/.rss", 1,'culture'],
+    	"read-e": ["http://feed.torrentfreak.com/Torrentfreak/", 1,'culture'], 
+		"read-f": ["http://www.reddit.com/r/IAmA/.rss", 1,'culture']
+	
+		
+		
+
+
+
+};
+    
+     for(var key in feeds) {
+      if (feeds.hasOwnProperty(key)) {
+      	// run onload
+		$("#"+feeds[key][2]).append("<ul class='feedwrapper' id='" + key + "'></ul>")
+      	initialize(feeds[key][0], key, feeds[key][1], false);
+
+            }
+      }
+    
+      
+
+      }
+
+    google.load("feeds", "1");
+
+    function initialize(what, where, count, refresh) {
+    
+    
+	if(refresh === true) { $("#"+where).fadeOut("slow"); $("#"+where).html(""); }     
+      var feed = new google.feeds.Feed(what);
+      feed.setNumEntries(count);
+      feed.load(function(result) {
+        if (!result.error) {
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            var link = "<li><a href='" + entry.link + "' target='_blank'>" + entry.title + "</a>" + (function() { if(entry.contentSnippet.length > 20) { return "<br/><p class='snippet'>" + entry.contentSnippet + "</p>"; } })() + "</li>";
+            $("#"+where).append(link).fadeIn("slow");
+           //console.log(result.feed);
+          }
+            $("ul#"+where).parents("div").prev("h3").first().fadeIn("slow");
+            //$("ul#"+where+ " li").click(function(e) { $(this).hide(); });
+        } else {
+			if(console) { console.log(what + " : " + result.error.message); }
+		}
+		
+		//$("li").hover(function(e) { if($(this).children("p").length > 0) { $(this).children("p").slideToggle(); } });
+      });
+      
+       	// run ontimer
+      	var timer = Math.floor((Math.random()*10000)+1);
+      	
+      	 setTimeout(function() {
+      		  initialize(what, where, count, true);
+      	}, Math.floor((Math.random()*(1200000 - 3000000) + 1)+3000000)); 
+      	
+      	      //$("ul"+where).fadeIn("slow");
+      	      
+
+
+    }
+    google.setOnLoadCallback(feedgenerator);
+
+	$(document).ready(function() {
+		$("#toggle-black").click(function(e) {
+			$("body").css({"background-color":"black", "color": "white"});
+			$("a").css({"color": "white"});
+			$("a:visited").css({"background-color":"#aaa"});
+			$("p.snippet").css({"color": "#ccc"});
+		});
+		$("#toggle-white").click(function(e) {
+			$("body").css({"background-color":"white", "color": "black"});
+			$("a").css({"color": "black"});
+			$("p.snippet").css({"color": "#666"});
+			//$(".feedwrapper li").css({"background-color":"#EDEDED"});
+		});
+		
+		$(function() {
+			$( "#tabs" ).tabs({ fx: { opacity: 'toggle' } });
+		});
+		
+		$("a#full").click(function(e) {
+			e.preventDefault();
+			if($(".ui-tabs .ui-tabs-hide").length > 0) {
+				$("div.ui-tabs-hide").removeClass("ui-tabs-hide");
+				$("a#full").text("compact");
+			} else {
+				$( "#tabs" ).tabs({ fx: { opacity: 'toggle' } });
+				$("a#full").text("show full");
+			}
+		});
+		
+	});
+    </script>
+	
+		<link rel="stylesheet" href="../../js/jquery/themes/dark-hive/jquery.ui.tabs.css"/>
+		<script type="text/javascript" src="../../js/jquery/ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" src="../../js/jquery/ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" src="../../js/jquery/ui/jquery.ui.tabs.js"></script>
+</head>
+
+
+<body>
+
+
+
+<div class="container" id="tabs">
+		<div class="row">
+		<div id="masthead" class="twelvecol last">
+			<p>&infin;</p>
+		</div>
+		</div>
+
+
+	
+	<div class="row">
+		<div id="nav" class="twelvecol last">
+	
+		</div>
+
+	</div>
+	
+	
+	
+	<div id="tabs-1">
+	<div class="row">
+		<div class="twelvecol last" id="headline">
+			<div id="news-headline">
+			
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="row">
+		<div class="fourcol">
+			<h3>local news</h3>
+			<div id="local-news">
+				
+			</div>
+
+	
+		</div>
+		<div class="fourcol">
+			<h3>world news</h3>
+			<div id="world-news">
+				
+			</div>
+			
+		</div>
+		<div class="fourcol last">
+			<h3>social news</h3>
+			<div id="social-news">
+				
+			</div>
+		
+		</div>
+	
+	</div>
+	</div>
+	
+
+	
+	<div id="tabs-2">
+	<div class="row">
+		<div class="twelvecol last" id="headline">
+			<div id="tech-headline">
+			
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="row">
+		<div class="fourcol">
+			<h3>tech news</h3>
+			<div id="tech-news">
+				
+			</div>
+
+	
+		</div>
+		<div class="fourcol">
+			<h3>tech blogs</h3>
+			<div id="tech-blogs">
+				
+			</div>
+			
+		</div>
+		<div class="fourcol last">
+			<h3>tech reviews</h3>
+			<div id="tech-reviews">
+				
+			</div>
+		
+		</div>
+	
+	</div>
+	</div>
+	
+	
+	<div id="tabs-3">
+	<div class="row">
+		<div class="twelvecol last" id="headline">
+			<div id="ent-headline">
+			
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="row">
+		<div class="fourcol">
+			<h3>game news</h3>
+			<div id="game-news">
+				
+			</div>
+
+	
+		</div>
+		<div class="fourcol">
+			<h3>game reviews</h3>
+			<div id="game-reviews">
+				
+			</div>
+			
+		</div>
+		<div class="fourcol last">
+			<h3>film news</h3>
+			<div id="film">
+				
+			</div>
+		
+		</div>
+	
+	</div>
+	</div>
+
+	<div id="tabs-4">
+		<div class="row">
+		<div class="twelvecol last" id="headline">
+			<div id="rand-headline">
+			
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="row">
+		<div class="fourcol">
+			<h3>humor</h3>
+			<div id="humor">
+				
+			</div>
+
+	
+		</div>
+		<div class="fourcol">
+			<h3>culture</h3>
+			<div id="culture">
+				
+			</div>
+			
+		</div>
+		<div class="fourcol last">
+			<h3>science</h3>
+			<div id="science">
+				
+			</div>
+		
+		</div>
+	
+	</div>
+	</div>
+	
+	
+</div>
+
+
+</div>
+
+</body>
+
+</html>

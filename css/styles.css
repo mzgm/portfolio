@@ -1,0 +1,85 @@
+/* ============================== */
+/* ! Layout for desktop version   */
+/* ============================== */
+
+	body {
+		
+	font: 15px/19px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: #6889AE;
+	color: white;
+	}
+	
+
+/* ============================= */
+/* ! Layout for mobile version   */
+/* ============================= */
+
+@media handheld, only screen and (max-width: 767px) {
+
+	body {
+		
+	font: 15px/19px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: #6889AE;
+	color: white;
+	}
+
+}
+
+
+/* ========================================== */
+/* ! Provide higher res assets for iPhone 4   */
+/* ========================================== */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+
+/*	.logo {
+		background: url(logo2x.jpg) no-repeat;
+		background-size: 212px 303px;
+	}*/
+
+}
+
+	
+	
+	h1 { font-size: 24px; font-weight: normal;}
+	h2 { font-size: 22px; font-weight: normal; }
+	h3 { font-size: 19px; background: #6889AE; display: inline; border-bottom: 1px solid #ccc; font-weight: normal; }
+	
+	
+	.container p, .container ul {
+	margin: 20px 0 0 0;
+	}
+	
+	ul li, .blackbox { margin: 0 0 20px 0; background: #446E95;
+padding: 10px; border-radius: 5px; }
+	
+	.header { margin-top: 30px; margin-bottom:10px; background: #1E3F64;
+
+border-bottom: 1px solid #ccc;
+padding: 10px 20px;  font-weight: normal;}
+	
+	.row { margin-bottom: 20px;}
+	
+	img { border: 1px solid #1E3F64; margin-top: 38px; }
+
+.pp { margin: 0 0 20px 0; background: #446E95;
+padding: 10px; border-radius: 5px; }
+.personal h3 { background-color: #446E95 }
+.personal p { margin-top: 5px; }
+	
+	#feeds { float: right; }
+	#feeds ul { margin: 0; }
+	#feeds ul li { font-size: 11px; border-radius: 0; list-style-type: none; margin: 0; padding: 3px; float: left; background: #1E3F64; }
+	.feed-wrap { clear: left; display: block; }
+	#feeds ul li h4 { font-weight: normal;}
+	
+	a { color: lightyellow; border-bottom: 1px dotted white; text-decoration: none; }
+	h3 a { font-weight: normal; float: right;}
+	.rssBody li div { display: none; }
+	
+	#lfm img { float: left; width: 34px; height: 34px; margin-right: 5px; }
+	
+	.lastFMHeader { display: none; }
+	h4.heading { backgro/und: #13444D; font-size: 11px; padding: 3px; float: left; font-weight: normal;}
+	
+	.header .eightcol { margin: 2px 0 0 0; }

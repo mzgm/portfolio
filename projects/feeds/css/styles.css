@@ -1,0 +1,126 @@
+/* ============================== */
+/* ! Layout for desktop version   */
+/* ============================== */
+
+	body {
+		
+	}
+	
+
+/* ============================= */
+/* ! Layout for mobile version   */
+/* ============================= */
+
+@media handheld, only screen and (max-width: 767px) {
+
+	body {
+		
+	}
+
+}
+
+
+/* ========================================== */
+/* ! Provide higher res assets for iPhone 4   */
+/* ========================================== */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+
+/*	.logo {
+		background: url(logo2x.jpg) no-repeat;
+		background-size: 212px 303px;
+	}*/
+
+}
+
+
+
+	body {
+	font: 14px/ 19px 'lucida grande', helvetica, arial, sans-serif;
+	background-color: black;
+	color: white;
+	}
+	
+	.container ul.feedwrapper {
+	c/olor: #fff;
+	backgro/und: #4F585F; 
+	display: none;
+	}
+	
+	div.subheading {
+	color: #fff;
+	background: #4F585F;
+}
+div.subheading span {
+border-bottom: 1px solid black;
+padding: 2px;
+background: #BDC910;
+border-right: 1px solid black;
+bo/rder-top: 1px solid white;
+border-collapse: collapse;
+box-shadow: 2px 2px 1px #333;
+	}
+	.feedwrapper li {
+		padding: 7px 10px 7px 7px;
+		list-style-type: none;
+		backg/round: #EDEDED;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+	
+	h2 {
+		bac/kground: #1E231E;
+		padding: 5px 5px 5px 0;
+		font-size: 19px; font-weight: normal;
+border-bottom: 1px solid white;  
+border-bottom: 1px solid #ccc;
+	}
+	
+	h3 {
+	font-weight: normal;
+font-size: 12px;
+text-transform: uppercase;
+margin: 10px 0 0 0;
+display: none;
+	padding: 2px;
+	background:lightblue; color: black;
+	}
+	
+	#header  {   ba/ckground-color: #1E231E; width: 100%;
+padding: 5px 5px 5px 0; text-align: center;
+margin: 30px 0;  bo/rder-bottom: 1px solid white; }
+
+#header p.snippet { di/splay: none; }
+#masthead { font-size: 100px; text-align:center; color: white; height: 50px; margin: 20px 0; } 
+
+ul#head li a, ul#head li a:visited, 
+ul#head li a:hover { font-size: 12px; font-weight: normal; list-style-type: none; text-decoration: none; color: white; border: none; 
+font-family: 'lucida grande', helvetica, arial, sans-serif}
+	
+	ul li a { text-decoration: none; color: white; font-size: 14px; font-family: georgia; border-bo/ttom: 1px dotted #ccc; }
+	
+	ul li a:visited { text-decoration: none; color: #ccc; border-bottom: 1px dotted #4F585F; }
+	
+	ul li a:hover { text-decoration: none; border-bottom: 1px dotted orange; color: #ccc; }
+	
+	p.snippet {
+		font-size: 11px; backgr/ound: #efefef; padding: 3px 0 ; b/order-top: 1px solid #A7DBED; color: #ccc;
+	}
+	
+	#headline {
+		margin: 20px 0 10px 0; text-align: center;
+	}
+	
+	#headline ul li a { font-size: 26px; }
+	#headline ul li {  }
+	
+	#nav {text-align: center; color: white; }
+	#nav a, ul#nav-bar li a { font-family: georgia; font-size: 12px; color: lightblue;  text-decoration: none; padding: 1px 3px; }
+	ul#nav-bar li { margin-right: 20px; }
+	ul#nav-bar li.ui-state-active a { background: lightblue; color: black; 
+border-radius: 3px; }
+	
+	ul#nav-bar { margin: 10px auto 50px auto;
+text-align: center;
+width: 288px;
+}

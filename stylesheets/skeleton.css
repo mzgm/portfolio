@@ -1,0 +1,469 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+
+/* Table of Contents
+==================================================
+    #Base 960 Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing */
+
+
+
+/* #Base 960 Grid
+================================================== */
+
+    .container                                  { position: relative; width: 960px; margin: 0 auto; padding: 0; }
+    .container .column,
+    .container .columns                         { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
+    .row                                        { margin-bottom: 20px; }
+
+    /* Nested Column Classes */
+    .column.alpha, .columns.alpha               { margin-left: 0; }
+    .column.omega, .columns.omega               { margin-right: 0; }
+
+    /* Base Grid */
+    .container .one.column,
+    .container .one.columns                     { width: 40px;  }
+    .container .two.columns                     { width: 100px; }
+    .container .three.columns                   { width: 160px; }
+    .container .four.columns                    { width: 220px; }
+    .container .five.columns                    { width: 280px; }
+    .container .six.columns                     { width: 340px; }
+    .container .seven.columns                   { width: 400px; }
+    .container .eight.columns                   { width: 460px; }
+    .container .nine.columns                    { width: 520px; }
+    .container .ten.columns                     { width: 580px; }
+    .container .eleven.columns                  { width: 640px; }
+    .container .twelve.columns                  { width: 700px; }
+    .container .thirteen.columns                { width: 760px; }
+    .container .fourteen.columns                { width: 820px; }
+    .container .fifteen.columns                 { width: 880px; }
+    .container .sixteen.columns                 { width: 940px; }
+
+    .container .one-third.column                { width: 300px; }
+    .container .two-thirds.column               { width: 620px; }
+
+    /* Offsets */
+    .container .offset-by-one                   { padding-left: 60px;  }
+    .container .offset-by-two                   { padding-left: 120px; }
+    .container .offset-by-three                 { padding-left: 180px; }
+    .container .offset-by-four                  { padding-left: 240px; }
+    .container .offset-by-five                  { padding-left: 300px; }
+    .container .offset-by-six                   { padding-left: 360px; }
+    .container .offset-by-seven                 { padding-left: 420px; }
+    .container .offset-by-eight                 { padding-left: 480px; }
+    .container .offset-by-nine                  { padding-left: 540px; }
+    .container .offset-by-ten                   { padding-left: 600px; }
+    .container .offset-by-eleven                { padding-left: 660px; }
+    .container .offset-by-twelve                { padding-left: 720px; }
+    .container .offset-by-thirteen              { padding-left: 780px; }
+    .container .offset-by-fourteen              { padding-left: 840px; }
+    .container .offset-by-fifteen               { padding-left: 900px; }
+
+
+
+/* #Tablet (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+        .container                                  { width: 768px; }
+        .container .column,
+        .container .columns                         { margin-left: 10px; margin-right: 10px;  }
+        .column.alpha, .columns.alpha               { margin-left: 0; margin-right: 10px; }
+        .column.omega, .columns.omega               { margin-right: 0; margin-left: 10px; }
+        .alpha.omega                                { margin-left: 0; margin-right: 0; }
+
+        .container .one.column,
+        .container .one.columns                     { width: 28px; }
+        .container .two.columns                     { width: 76px; }
+        .container .three.columns                   { width: 124px; }
+        .container .four.columns                    { width: 172px; }
+        .container .five.columns                    { width: 220px; }
+        .container .six.columns                     { width: 268px; }
+        .container .seven.columns                   { width: 316px; }
+        .container .eight.columns                   { width: 364px; }
+        .container .nine.columns                    { width: 412px; }
+        .container .ten.columns                     { width: 460px; }
+        .container .eleven.columns                  { width: 508px; }
+        .container .twelve.columns                  { width: 556px; }
+        .container .thirteen.columns                { width: 604px; }
+        .container .fourteen.columns                { width: 652px; }
+        .container .fifteen.columns                 { width: 700px; }
+        .container .sixteen.columns                 { width: 748px; }
+
+        .container .one-third.column                { width: 236px; }
+        .container .two-thirds.column               { width: 492px; }
+
+        /* Offsets */
+        .container .offset-by-one                   { padding-left: 48px; }
+        .container .offset-by-two                   { padding-left: 96px; }
+        .container .offset-by-three                 { padding-left: 144px; }
+        .container .offset-by-four                  { padding-left: 192px; }
+        .container .offset-by-five                  { padding-left: 240px; }
+        .container .offset-by-six                   { padding-left: 288px; }
+        .container .offset-by-seven                 { padding-left: 336px; }
+        .container .offset-by-eight                 { padding-left: 384px; }
+        .container .offset-by-nine                  { padding-left: 432px; }
+        .container .offset-by-ten                   { padding-left: 480px; }
+        .container .offset-by-eleven                { padding-left: 528px; }
+        .container .offset-by-twelve                { padding-left: 576px; }
+        .container .offset-by-thirteen              { padding-left: 624px; }
+        .container .offset-by-fourteen              { padding-left: 672px; }
+        .container .offset-by-fifteen               { padding-left: 720px; }
+    }
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+    @media only screen and (max-width: 767px) {
+        .container { width: 300px; }
+        .container .columns,
+        .container .column { margin: 0; }
+
+        .container .one.column,
+        .container .one.columns,
+        .container .two.columns,
+        .container .three.columns,
+        .container .four.columns,
+        .container .five.columns,
+        .container .six.columns,
+        .container .seven.columns,
+        .container .eight.columns,
+        .container .nine.columns,
+        .container .ten.columns,
+        .container .eleven.columns,
+        .container .twelve.columns,
+        .container .thirteen.columns,
+        .container .fourteen.columns,
+        .container .fifteen.columns,
+        .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column  { width: 300px; }
+
+        /* Offsets */
+        .container .offset-by-one,
+        .container .offset-by-two,
+        .container .offset-by-three,
+        .container .offset-by-four,
+        .container .offset-by-five,
+        .container .offset-by-six,
+        .container .offset-by-seven,
+        .container .offset-by-eight,
+        .container .offset-by-nine,
+        .container .offset-by-ten,
+        .container .offset-by-eleven,
+        .container .offset-by-twelve,
+        .container .offset-by-thirteen,
+        .container .offset-by-fourteen,
+        .container .offset-by-fifteen { padding-left: 0; }
+
+    }
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+    /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        .container { width: 420px; }
+        .container .columns,
+        .container .column { margin: 0; }
+
+        .container .one.column,
+        .container .one.columns,
+        .container .two.columns,
+        .container .three.columns,
+        .container .four.columns,
+        .container .five.columns,
+        .container .six.columns,
+        .container .seven.columns,
+        .container .eight.columns,
+        .container .nine.columns,
+        .container .ten.columns,
+        .container .eleven.columns,
+        .container .twelve.columns,
+        .container .thirteen.columns,
+        .container .fourteen.columns,
+        .container .fifteen.columns,
+        .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column { width: 420px; }
+    }
+
+
+/* #Clearing
+================================================== */
+
+    /* Self Clearing Goodness */
+    .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+    /* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after,
+    .row:before,
+    .row:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .row:after,
+    .clearfix:after {
+      clear: both; }
+    .row,
+    .clearfix {
+      zoom: 1; }
+
+    /* You can also use a <br class="clear" /> to clear columns */
+    .clear {
+      clear: both;
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+
+
+@font-face{
+  font-family:'ChunkFiveRegular';
+  src:url('f/chunk-webfont.eot');
+  src:local('☺'),url('f/chunk-webfont.woff') format('woff'),url('f/chunk-webfont.ttf') format('truetype'),url('f/chunk-webfont.svg#webfontp2unCWQ0') format('svg');
+  font-weight:normal;
+  font-style:normal;
+}
+@font-face {
+  font-family: 'LatinModernRoman10Regular';
+  src: url('f/lmroman10-regular-webfont.eot');
+  src: local('☺'), url('f/lmroman10-regular-webfont.woff') format('woff'), url('f/lmroman10-regular-webfont.ttf') format('truetype'), url('f/lmroman10-regular-webfont.svg#webfontg3VAmqr8') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatinModernRomanSlanted10Regu';
+  src: url('f/lmromanslant10-regular-webfont.eot');
+  src: local('☺'), url('f/lmromanslant10-regular-webfont.woff') format('woff'), url('f/lmromanslant10-regular-webfont.ttf') format('truetype'), url('f/lmromanslant10-regular-webfont.svg#webfont5pLJWgYw') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'LatinModernRoman10Bold';
+  src: url('f/lmroman10-bold-webfont.eot');
+  src: local('☺'), url('f/lmroman10-bold-webfont.woff') format('woff'), url('f/lmroman10-bold-webfont.ttf') format('truetype'), url('f/lmroman10-bold-webfont.svg#webfontDIaNd4lG') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatinModernRoman10BoldItalic';
+  src: url('f/lmroman10-bolditalic-webfont.eot');
+  src: local('☺'), url('f/lmroman10-bolditalic-webfont.woff') format('woff'), url('f/lmroman10-bolditalic-webfont.ttf') format('truetype'), url('f/lmroman10-bolditalic-webfont.svg#webfontVm6n5sgb') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'LatinModernMono10Regular';
+  src: url('f/lmmono10-regular-webfont.eot');
+  src: local('☺'), url('f/lmmono10-regular-webfont.woff') format('woff'), url('f/lmmono10-regular-webfont.ttf') format('truetype'), url('f/lmmono10-regular-webfont.svg#webfontThQaD2ST') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatinModernMonoSlanted10Regul';
+  src: url('f/lmmonoslant10-regular-webfont.eot');
+  src: local('☺'), url('f/lmmonoslant10-regular-webfont.woff') format('woff'), url('f/lmmonoslant10-regular-webfont.ttf') format('truetype'), url('f/lmmonoslant10-regular-webfont.svg#webfontpL2TNuMK') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+body{
+  font:100%/1.4 'LatinModernRoman10Regular',serif;
+  background: #4472C7;
+  color:black;
+}
+code {
+  font-family:'LatinModernMono10Regular',monospace;
+  font-weight:normal;
+}
+code i{
+  font-family:'LatinModernMonoSlanted10Regul',monospace;
+  font-style:italic;
+}
+i{
+  font-family:'LatinModernRomanSlanted10Regu',serif;
+}
+b,h2 span {
+  font-family:'LatinModernRoman10Bold',serif;
+  font-weight:bold;
+}
+
+h2 {
+     border-bottom: 1px solid;
+    color: #84B2EF;
+    font-family: 'LatinModernRomanSlanted10Regu',serif;
+    font-size: 15px;
+    margin: 60px auto 20px;
+    text-align: center;
+    width: 110px;
+
+}
+
+h1 {
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    line-height: 2;
+    height: 40px;
+}
+
+h1 span {
+    color: #84B2EF;
+}
+
+a:link,a:visited{
+  text-decoration:none;
+  color:white;
+  border-bottom: 1px dottted white;
+  padding: 0 0 3px 0;
+}
+table:hover a:link,
+table:hover a:visited{
+  text-decoration:underline !important;
+}
+td, p, li {
+  margin:0;
+  padding:0;
+  font-size: 14px;
+  line-height:1.6;
+  text-align:left;
+  vertical-align:top;
+  color: #84B2EF;
+}
+
+li {
+    color: #fff;
+    font-size: 13px;
+}
+
+.dots{
+  background:tan url(i/dot-tan.png) repeat-x 0 0.95em;
+}
+.dots *{
+  background:tan;
+}
+code{
+  font-size:small;
+  line-height:1.4;
+  font-style:normal !important;
+}
+hr{
+  color:black;
+  margin-top:4px;
+  border-top:6px solid;
+}
+.note{
+  border:5px double;
+  border-radius: 1.4em;
+  margin-top:0.7em;
+  padding: 0.3em 1em 0.5em 1em;
+  line-height:1.6;
+}
+span {
+    color: #fff;
+}
+#td1{width:2%}
+#td2{width:17%}
+#td3{width:30%}
+#td4{width:1%}
+#td5{width:2%}
+#td6{width:18%}
+#td7{width:29%}
+#td8{width:1%}
+@media print{
+  a:link,a:visited{
+    text-decoration:none;
+  }
+  h1,h2{
+    text-shadow:none;
+  }
+}
+
+p {
+  margin: 10px 0;
+}
+
+ul {
+  margin: 1em 3em 0;
+  text-align: center;
+  list-style-type: circle;
+}
+
+li {
+  display: inline;
+  margin: 0 10px 0 0;
+  list-style-type: none;
+}
+
+.secondary li {
+    color: #ffdddd;
+}
+
+body {
+        margin: 2em 0;
+    }
+    ul li {
+        display: inline;
+    }
+
+    .project {
+        background-color: #577DB2;
+        border-radius: 8px;
+        margin: 20px auto 50px;
+        width: 75%;
+        text-align: center;
+    }
+
+    .project h1 {
+         border-bottom: 1px solid;
+        color: #FFFFFF;
+        display: inline;
+        font-size: 11px;
+        margin: 0 15px;
+        padding: 3px 0;
+        text-align: center;
+    }
+
+    .project p {
+        margin: 0 15px;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 0 0 10px 0;
+         font-size: 13px;
+    }
+
+    .project ul {
+        padding: 0 0 1em 0;
+    }
+
+    .profile, .skills, .work {
+        margin: 100px 0;
+    }
+
+    .profile {
+        margin-top: 50px;
+    }

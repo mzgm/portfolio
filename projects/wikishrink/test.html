@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   
+   <style type="text/css">
+   h1 { font: 24px/22px bold Helvetica, Arial; }
+   h2 { font: 16px/22px bold Helvetica, Arial; }
+   #reddit { width: 500px; }
+   #digg { width: 500px; }
+   .left { float: left; } .right { float: right; }
+   .clearboth { clear: both; }
+   </style>
+   <script type="text/javascript" src="jquery-1.4.min.js"></script>
+</head>
+<body>
+
+<script type="text/html" id="reddit_template">
+	<% for ( var i = 0; i < 5; i++ ) { %>
+		<% if(i == 0) { %>
+		<a href="<%=(data.children[i].data.url) %>">
+			<h1><%=data.children[i].data.title %> (<%=data.children[i].data.domain %>)</h1>
+		</a>
+		<% } else { %>
+		<a href="<%=(data.children[i].data.url) %>">
+			<h2><%=data.children[i].data.title %> (<%=data.children[i].data.domain %>)</h2>
+		</a>
+		<% } %>
+	<% } %>
+</script>
+
+<script type="text/html" id="digg_template">
+	<% for ( var i = 0; i < 5; i++ ) { %>
+		<% if(i == 0) { %>
+		<a href="<%=(stories[i].link) %>">
+			<h1><%=stories[i].title %> (<%=stories[i].topic.name %>)</h1>
+		</a>
+		<% } else { %>
+		<a href="<%=(stories[i].link) %>">
+			<h2><%=stories[i].title %> (<%=stories[i].topic.name %>)</h2>
+		</a>
+		<% } %>
+	<% } %>
+</script>
+
+
+<div id="reddit" class="left">
+	<div class="reddit_feed"></div>
+</div>
+
+<div id="digg" class="left">
+	<div class="digg_feed"></div>
+</div>
+
+<div class="clearboth"></div>
+</body>
+<script type="text/javascript">
+
+// Simple JavaScript Templating
+// John Resig - http://ejohn.org/ - MIT Licensed
+(function(){
+  var cache = {};
+
+  this.tmpl = function tmpl(str, data){
+    // Figure out if we're getting a template, or if we need to
+    // load the template - and be sure to cache the result.
+    var fn = !/\W/.test(str) ?
+      cache[str] = cache[str] ||
+        tmpl(document.getElementById(str).innerHTML) :
+
+      // Generate a reusable function that will serve as a template
+      // generator (and which will be cached).
+      new Function("obj",
+        "var p=[],print=function(){p.push.apply(p,arguments);};" +
+
+        // Introduce the data as local variables using with(){}
+        "with(obj){p.push('" +
+
+        // Convert the template into pure JavaScript
+        str
+          .replace(/[\r\t\n]/g, " ")
+          .split("<%").join("\t")
+          .replace(/((^|%>)[^\t]*)'/g, "$1\r")
+          .replace(/\t=(.*?)%>/g, "',$1,'")
+          .split("\t").join("');")
+          .split("%>").join("p.push('")
+          .split("\r").join("\\'")
+      + "');}return p.join('');");
+
+    // Provide some basic currying to the user
+    return data ? fn( data ) : fn;
+  };
+})();
+
+
+function onLoadJson() {
+	
+	
+	// parsing json object
+	function displayFeed(panel, data){
+		jQuery('.'+panel+'_feed').html(tmpl(panel+'_template', data));
+	}
+	
+	// config parameters
+	var options = {
+		type: "GET",
+		url: 'curl.php',
+		dataType: "json",
+		timeout: 6000, // 6 seconds
+		success: function(data, textStatus) {
+			displayFeed('reddit', data.redditTop);
+			displayFeed('digg', data.diggTop);
+			console.log(data);
+		},
+		error: function(xhr, textStatus, errorThrown) {
+			  //console.log(feedUri+ ' returned error: ' +errorThrown + '\n and status:' + xhr.status + ' ' + xhr.responseText);
+		},
+		complete: function(xhr, textStatus) {
+			 //console.log(feedUri+ '\n complete - returned status: '+' ' +xhr.status);
+		}
+	};
+
+	// fetch json
+	jQuery.ajax(options);
+
+}
+$(document).ready(function() {
+	//onLoadJson('http://www.reddit.com/.json', 'reddit', 'reddit_template');
+	onLoadJson()
+});
+</script>
+</html>
